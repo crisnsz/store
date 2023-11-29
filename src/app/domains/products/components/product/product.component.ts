@@ -3,13 +3,20 @@ import { CommonModule } from '@angular/common';
 import { Product } from '@shared/models/product.model';
 import { ReversePipe } from '@shared/pipes/reverse.pipe';
 import { TimeAgoPipe } from '@shared/pipes/time-ago.pipe';
+import { RouterLink, RouterLinkActive } from '@angular/router';
 
 @Component({
-    selector: 'app-product',
-    standalone: true,
-    templateUrl: './product.component.html',
-    styleUrl: './product.component.css',
-    imports: [CommonModule, ReversePipe, TimeAgoPipe]
+  selector: 'app-product',
+  standalone: true,
+  templateUrl: './product.component.html',
+  styleUrl: './product.component.css',
+  imports: [
+    CommonModule,
+    ReversePipe,
+    TimeAgoPipe,
+    RouterLink,
+    RouterLinkActive
+],
 })
 export class ProductComponent {
   @Input({ required: true }) product!: Product;
